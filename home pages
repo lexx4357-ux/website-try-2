@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innovation Essay - Home</title>
+<style>
+:root {--dark-blue:#0b2545;--light-blue:#3b79c1;--text-white:#ffffff;}
+body {margin:0; background:var(--dark-blue); color:var(--text-white); font-family:'Segoe UI'; animation:fadeIn 1s;}
+nav {background:#113a72; padding:1rem; display:flex; justify-content:center; gap:1.2rem; box-shadow:0 0 12px #2f62a0;}
+nav a {color:white; font-weight:600; text-decoration:none; transition:.3s;}
+nav a:hover {color:var(--light-blue); transform:scale(1.1);}
+.progress {text-align:center; margin:0.5rem 0 2rem 0; font-weight:600; font-size:0.95rem; color:#ffffffcc; animation:fadeIn 1s ease;}
+main {max-width:900px; margin:auto; padding:2rem; animation:slideUp 1.2s; text-align:center;}
+.btn-start {background:var(--light-blue); padding:1rem 2rem; border-radius:10px; color:white; font-size:1.3rem; text-decoration:none; transition:0.3s ease; box-shadow:0 0 10px #3b79c1;}
+.btn-start:hover {background:#4d8fe6; transform:scale(1.06);}
+@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+@keyframes slideUp {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="page1.html">Start →</a>
+</nav>
+<div class="progress">Home</div>
+
+<main>
+  <h1>Innovation Essay</h1>
+  <p>Welcome! Read the essay one paragraph at a time. Use the navigation bar to move between pages.</p>
+  <a class="btn-start" href="page1.html">Begin Reading →</a>
+</main>
+
+<script>
+const progressDiv = document.querySelector('.progress');
+const filename = window.location.pathname.split("/").pop();
+if(filename === "index.html") progressDiv.textContent = "Home";
+</script>
+
+</body>
+</html>
