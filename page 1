@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page 1 - Innovation Essay</title>
+<style>
+:root {--dark-blue:#0b2545;--light-blue:#3b79c1;--text-white:#ffffff;}
+body {margin:0; background:var(--dark-blue); color:var(--text-white); font-family:'Segoe UI'; animation:fadeIn 1s;}
+nav {background:#113a72; padding:1rem; display:flex; justify-content:center; gap:1.2rem; box-shadow:0 0 12px #2f62a0;}
+nav a {color:white; font-weight:600; text-decoration:none; transition:.3s;}
+nav a:hover {color:var(--light-blue); transform:scale(1.1);}
+.progress {text-align:center; margin:0.5rem 0 2rem 0; font-weight:600; font-size:0.95rem; color:#ffffffcc; animation:fadeIn 1s ease;}
+main {max-width:900px; margin:auto; padding:2rem; animation:slideUp 1.2s;}
+img.support-image {width:100%; border-radius:10px; margin:1.5rem 0; box-shadow:0 0 15px #1c3f70; transition:transform 0.3s;}
+img.support-image:hover {transform:scale(1.03);}
+@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+@keyframes slideUp {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="page2.html">Next →</a>
+</nav>
+<div class="progress">Page 1 of 14</div>
+
+<main>
+  <h2>Paragraph 1</h2>
+  <p>Is ternary computing the way to go beyond Moore’s Law? Moore’s Law, predicted by Gordon Moore in 1965, states that the number of transistors on a microchip doubles every two years, leading to rapid growth in computing performance.</p>
+  <img class="support-image" src="images/moores-law.jpg" alt="Moore's Law Illustration">
+</main>
+
+<script>
+const progressDiv = document.querySelector('.progress');
+const filename = window.location.pathname.split("/").pop();
+const pageMatch = filename.match(/page(\d+)\.html/i);
+if(pageMatch){ progressDiv.textContent = `Page ${pageMatch[1]} of 14`; }
+</script>
+
+</body>
+</html>
